@@ -1,0 +1,62 @@
+<html lang="en-us">
+
+<head>
+  <title>JavaScript</title>
+  <meta charset="utf-8">
+</head>
+<!-- <script src="matematicas2.js"></script> -->
+ <script>
+   function referencia(){
+     var checado = document.getElementById('posible');
+
+     if(checado.checked)
+     {
+       var texto = document.getElementById("aprox");
+
+       texto.removeAttribute('readonly',false);
+     }else
+      {
+        var texto = document.getElementById("aprox");
+
+        texto.setAttribute('readonly','readonly',false);
+      }
+   }
+ </script>
+
+<body>
+    <h1><center>Metodos Numericos</center></h1>
+  <form name="formulario">
+    <table id="tabla">
+      <thead>Complete la siguiente tabla</thead>
+      <tr>
+        <td class="labels"><label>X</label></td>
+        <td><input type="text" name="x0"></td>
+        <td><input type="text" name="x1"></td>
+        <td><input type="text" name="x2"></td>
+      </tr>
+      <col>
+        <td class="labels"><label>f(x)</label></td>
+        <td><input type="text" name="f0"></td>
+        <td><input type="text" name="f1"></td>
+        <td><input type="text" name="f2"></td>
+      </col>
+    </table>
+    <label>Tiene aproximacion?</label>
+    <input type="checkbox" onclick="referencia();" id="posible"><br>
+    <input type="text" id="aprox" readonly="readonly">
+    <input type="submit" id="enviado" value="Enviar">
+  </form>
+
+  <section>
+      <center><h1>Resultados</h1></center>
+      <form id="resultados">
+        <label>Resultao b0 </label><input type="text" readonly="readonly"><br>
+        <label>Resultao b1 </label><input type="text" readonly="readonly"><br>
+        <label>Resultao b2 </label><input type="text" readonly="readonly"><br>
+
+        <label>La aproximación es: </label><input type="text" disabled class="error"><br>
+        <label>El error relativo es:</label><input type="text" disabled class="error"><br>
+      </form>
+  </section>
+</body>
+</html>
